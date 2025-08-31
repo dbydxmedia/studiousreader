@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studios Reader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FDF8F2;
+            color: #4A4A4A;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+        .star-rating {
+            color: #D35400;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#FDF8F2]/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-[#D35400] font-serif">Studios Reader</h1>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-[#D35400] transition-colors duration-300">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-[#D35400] transition-colors duration-300">About</a>
+                <a href="#reviews" class="text-gray-600 hover:text-[#D35400] transition-colors duration-300">Reviews</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-600 hover:text-[#D35400]">
+                &#9776;
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FDF8F2] py-4">
+            <a href="#" class="block text-center py-2 text-gray-600 hover:text-[#D35400]">Home</a>
+            <a href="#about" class="block text-center py-2 text-gray-600 hover:text-[#D35400]">About</a>
+            <a href="#reviews" class="block text-center py-2 text-gray-600 hover:text-[#D35400]">Reviews</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="hero" class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-serif">Your Next Great Read Awaits</h2>
+            <p class="text-lg max-w-3xl mx-auto text-gray-600">
+                Welcome to my digital bookshelf. Here, I share my thoughts, insights, and honest reviews on the books that have captivated me. Find your next favorite story and explore the wonderful world of literature.
+            </p>
+        </section>
+
+        <section id="reviews" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 font-serif">Latest Reviews</h2>
+            <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book review cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="about" class="bg-white p-8 rounded-lg shadow-lg mb-16">
+            <h2 class="text-3xl font-bold text-center mb-6 font-serif">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <img src="https://images2.minutemediacdn.com/image/upload/c_fill,w_1200,ar_4:3,f_auto,q_auto,g_auto/shape/cover/sport/62455-shout-factory1-869b74b647b88045caac956956bd1ff8.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full mb-6 md:mb-0 object-cover">
+                <div class="text-center md:text-left">
+                    <p class="text-lg mb-4">
+                        Hello! My name is Alex, and I've been lost in books for as long as I can remember. This blog is a place to share that passion with you. I believe every book has something to offer, and my goal is to help you discover the hidden gems and timeless classics that make reading such a joy. Happy reading!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Studios Reader. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviews = [
+                {
+                    title: "The Midnight Library",
+                    author: "Matt Haig",
+                    rating: 5,
+                    text: "A truly captivating and thought-provoking novel. It's an exploration of regret and the endless possibilities of life, all wrapped in a magical concept. Highly recommend for anyone who has ever wondered 'what if?'.",
+                    image: "https://online.fliphtml5.com/vvogw/gvgj/files/large/1.webp?1641021239&1641021239"
+                },
+                {
+                    title: "Dune",
+                    author: "Frank Herbert",
+                    rating: 4,
+                    text: "A masterpiece of science fiction and world-building. While dense at times, the political intrigue and complex characters make it a must-read for any genre fan. A cornerstone of the genre.",
+                    image: "https://m.media-amazon.com/images/I/913padSawdL.jpg"
+                },
+                {
+                    title: "Where the Crawdads Sing",
+                    author: "Delia Owens",
+                    rating: 4,
+                    text: "A beautiful and poignant story that blends a coming-of-age narrative with a compelling mystery. The vivid descriptions of the natural world are simply stunning and bring the setting to life.",
+                    image: "https://m.media-amazon.com/images/I/813HjdVYCrL.jpg"
+                },
+                {
+                    title: "Project Hail Mary",
+                    author: "Andy Weir",
+                    rating: 5,
+                    text: "A fantastic, fast-paced sci-fi adventure with a lovable protagonist and a clever, hard-science plot. It’s full of humor and heart, making it an absolute joy to read from start to finish.",
+                    image: "https://placehold.co/300x450/B7B7B7/4A4A4A?text=Project+Hail+Mary"
+                },
+                {
+                    title: "Circe",
+                    author: "Madeline Miller",
+                    rating: 5,
+                    text: "An enchanting and powerful retelling of the Greek myth. Miller's writing is exquisite, giving a new perspective to a fascinating character. A perfect blend of mythology and modern storytelling.",
+                    image: "https://placehold.co/300x450/B7B7B7/4A4A4A?text=Circe"
+                },
+                {
+                    title: "The Martian",
+                    author: "Andy Weir",
+                    rating: 4,
+                    text: "A captivating tale of survival and human ingenuity on Mars. The book is filled with smart, problem-solving narrative that makes the science accessible and fun. A thrilling read.",
+                    image: "https://placehold.co/300x450/B7B7B7/4A4A4A?text=The+Martian"
+                },
+                {
+                    title: "1984",
+                    author: "George Orwell",
+                    rating: 5,
+                    text: "A timeless dystopian masterpiece that remains chillingly relevant. Its exploration of surveillance, truth, and totalitarianism is a must-read for understanding modern political themes.",
+                    image: "https://placehold.co/300x450/B7B7B7/4A4A4A?text=1984"
+                },
+                {
+                    title: "Animal Farm",
+                    author: "George Orwell",
+                    rating: 4,
+                    text: "A powerful allegorical novella that uses a farm setting to critique a totalitarian government. It's a quick read with a profound message about power, corruption, and revolution.",
+                    image: "https://placehold.co/300x450/B7B7B7/4A4A4A?text=Animal+Farm"
+                }
+            ];
+
+            const reviewsContainer = document.getElementById('reviews-container');
+
+            function createStarRating(rating) {
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < rating) {
+                        stars += '&#9733;';
+                    } else {
+                        stars += '&#9734;';
+                    }
+                }
+                return stars;
+            }
+
+            reviews.forEach(review => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105';
+                
+                card.innerHTML = `
+                    <img src="${review.image}" alt="Book cover for ${review.title}" class="w-full h-auto rounded-lg mb-4 max-w-[200px]">
+                    <h3 class="text-xl font-semibold mb-2 font-serif">${review.title}</h3>
+                    <p class="text-gray-500 mb-2 italic">by ${review.author}</p>
+                    <div class="star-rating text-2xl mb-4">
+                        ${createStarRating(review.rating)}
+                    </div>
+                    <p class="text-gray-700">${review.text}</p>
+                `;
+                reviewsContainer.appendChild(card);
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
