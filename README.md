@@ -1,2 +1,0 @@
-# studiousreader
-Book Blog
